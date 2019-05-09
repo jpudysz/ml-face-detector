@@ -15,7 +15,8 @@
     "react-native": "0.59.8",
     "react-native-camera": "2.6.0",
     "react-native-firebase": "5.3.1",
-    "react-native-permissions": "1.1.1"
+    "react-native-permissions": "1.1.1",
+    "react-native-typography": "1.4.0"
   },
   "devDependencies": {
     "@babel/core": "7.4.4",
