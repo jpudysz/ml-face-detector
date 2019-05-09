@@ -6,7 +6,7 @@ import { Styles } from 'lib/types'
 import { ScreenNames } from 'lib/common'
 import { en_GB } from 'lib/locale'
 import { Button, Heading, Paragraph } from 'components'
-import { MeshList } from './MeshList'
+import { MeshList } from './components'
 
 const faceMesh = require('lib/assets/images/face-mesh.jpg')
 

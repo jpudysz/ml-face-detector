@@ -9,6 +9,8 @@ Tested only on iOS10
 
 ```
 npm/yarn install
+cd ios
+pod install
 ```
 
 ### Run project

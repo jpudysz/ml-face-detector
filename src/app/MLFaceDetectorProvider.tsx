@@ -3,10 +3,6 @@ import { AppRouter } from 'router'
 
 type MLFaceDetectorProviderProps = {}
 
-export class MLFaceDetectorProvider extends React.Component<MLFaceDetectorProviderProps> {
-    render() {
-        return (
-            <AppRouter/>
-        )
-    }
-}
+export const MLFaceDetectorProvider: React.FunctionComponent<MLFaceDetectorProviderProps> = () => (
+    <AppRouter/>
+)
