@@ -7,5 +7,5 @@ export enum PermissionStatus {
 }
 
 export enum PERMISSION {
-    CAMERA = 'CAMERA'
+    CAMERA = 'camera'
 }

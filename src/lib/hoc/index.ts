@@ -1,0 +1,1 @@
+export { withCameraPermissions } from './withCameraPermissions'

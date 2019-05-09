@@ -1,1 +1,5 @@
-export { CameraScreen } from './CameraScreen'
+import CameraScreen from './CameraScreen'
+
+export {
+    CameraScreen
+}

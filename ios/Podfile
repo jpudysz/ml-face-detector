@@ -19,6 +19,7 @@ target 'mlFaceDetector' do
     pod 'react-native-camera', path: '../node_modules/react-native-camera', subspecs: [
         'FaceDetectorMLKit'
     ]
+    pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
 end
 
 post_install do |installer|

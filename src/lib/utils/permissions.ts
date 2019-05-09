@@ -1,8 +1,8 @@
-import * as RNPermissions from 'react-native-permissions'
+import Permissions from 'react-native-permissions'
 import { PermissionStatus } from '../types'
 
 export const getPermissionStatus = async (permission: string) => {
-    const status = await RNPermissions.check(permission)
+    const status = await Permissions.check(permission)
 
     return status === PermissionStatus.DENIED
         ? PermissionStatus.UNDETERMINED
@@ -10,7 +10,7 @@ export const getPermissionStatus = async (permission: string) => {
 }
 
 export const requestPermission = async (permission: string) => {
-    const status = await RNPermissions.request(permission)
+    const status = await Permissions.request(permission)
 
     return status
 }
