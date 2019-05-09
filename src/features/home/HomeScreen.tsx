@@ -1,8 +1,10 @@
 import React from 'react'
 import { View, Image } from 'react-native'
-import { Styles } from 'lib/types'
-import { en_GB } from 'lib/locale'
 import { iOSColors } from 'react-native-typography'
+import { NavigationInjectedProps } from 'react-navigation'
+import { Styles } from 'lib/types'
+import { ScreenNames } from 'lib/common'
+import { en_GB } from 'lib/locale'
 import { Button, Heading, Paragraph } from 'components'
 import { MeshList } from './MeshList'
 
@@ -10,7 +12,7 @@ const faceMesh = require('lib/assets/images/face-mesh.jpg')
 
 const T = en_GB.screens.homeScreen
 
-type HomeScreenProps = {}
+type HomeScreenProps = NavigationInjectedProps
 
 export class HomeScreen extends React.Component<HomeScreenProps> {
     renderHeader() {
@@ -34,18 +36,13 @@ export class HomeScreen extends React.Component<HomeScreenProps> {
         )
     }
 
-    renderCameraButtons() {
+    renderCta() {
         return (
-            <View style={styles.ctaButtonsContainer}>
+            <View style={styles.ctaButtonContainer}>
                 <Button
+                    text={T.cta}
                     bgColor={iOSColors.purple}
-                    onPress={() => {}}
-                    text={T.cta.openCamera}
-                />
-                <Button
-                    bgColor={iOSColors.purple}
-                    onPress={() => {}}
-                    text={T.cta.selectPhotoFromGallery}
+                    onPress={() => this.props.navigation.navigate(ScreenNames.Camera)}
                 />
             </View>
         )
@@ -54,10 +51,7 @@ export class HomeScreen extends React.Component<HomeScreenProps> {
     renderMeshList() {
         return (
             <View style={styles.meshListContainer}>
-                <MeshList
-                    items={20}
-                    detectFace={() => {}}
-                />
+                <MeshList items={20}/>
             </View>
         )
     }
@@ -68,7 +62,7 @@ export class HomeScreen extends React.Component<HomeScreenProps> {
                 {this.renderFaceMeshBackground()}
                 {this.renderHeader()}
                 {this.renderMeshList()}
-                {this.renderCameraButtons()}
+                {this.renderCta()}
             </View>
         )
     }
@@ -97,7 +91,7 @@ const styles: Styles = {
     faceMeshContainer: {
         position: 'absolute',
     },
-    ctaButtonsContainer: {
+    ctaButtonContainer: {
         paddingHorizontal: 20
     },
     meshListContainer: {

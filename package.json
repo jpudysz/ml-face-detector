@@ -10,13 +10,13 @@
     "tsc:watch": "node node_modules/typescript/bin/tsc --watch"
   },
   "dependencies": {
-    "ramda": "0.26.1",
     "react": "16.8.3",
     "react-native": "0.59.8",
     "react-native-camera": "2.6.0",
-    "react-native-firebase": "5.3.1",
+    "react-native-gesture-handler": "1.2.1",
     "react-native-permissions": "1.1.1",
-    "react-native-typography": "1.4.0"
+    "react-native-typography": "1.4.0",
+    "react-navigation": "3.9.1"
   },
   "devDependencies": {
     "@babel/core": "7.4.4",

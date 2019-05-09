@@ -4,8 +4,7 @@ import { Nullable, Styles } from 'lib/types'
 import { SCREEN_WIDTH } from 'lib/common'
 
 type MeshListProps = {
-    items: number,
-    detectFace(string): void
+    items: number
 }
 
 export class MeshList extends React.Component<MeshListProps> {
@@ -65,7 +64,6 @@ export class MeshList extends React.Component<MeshListProps> {
             <Image
                 style={styles.image}
                 width={MeshList.IMAGE_WIDTH}
-                onLoadEnd={() => this.props.detectFace(uri)}
                 source={{ uri }}
             />
         )
