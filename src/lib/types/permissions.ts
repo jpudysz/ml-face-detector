@@ -1,9 +1,8 @@
 export enum PermissionStatus {
-    GRANTED = 'granted',
+    AUTHORIZED = 'authorized',
     DENIED = 'denied',
     UNDETERMINED = 'undetermined',
-    UNAVAILABLE = 'unavailable',
-    NEVER_ASK_AGAIN = 'never_ask_again'
+    RESTRICTED = 'restricted',
 }
 
 export enum PERMISSION {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { InteractionManager, Text, TouchableOpacity, View } from 'react-native'
+import { ActivityIndicator, InteractionManager, Text, TouchableOpacity, View } from 'react-native'
 import { NavigationInjectedProps } from 'react-navigation'
 import Permissions from 'react-native-permissions'
 import { iOSColors, sanFranciscoWeights } from 'react-native-typography'
@@ -53,7 +53,12 @@ export const withCameraPermissions = <BaseProps extends InjectedProps>(
 
     renderLoader() {
         return (
-            <View style={styles.loaderContainer} />
+            <View style={styles.loaderContainer}>
+                <ActivityIndicator
+                    size="large"
+                    color={iOSColors.white}
+                />
+            </View>
         )
     }
 
@@ -140,13 +145,12 @@ export const withCameraPermissions = <BaseProps extends InjectedProps>(
 
     render() {
         switch (this.state.cameraPermissionStatus) {
-            case PermissionStatus.GRANTED:
+            case PermissionStatus.AUTHORIZED:
                 return this.renderCamera()
             case PermissionStatus.UNDETERMINED:
                 return this.renderGivePermissionIncentive()
-            case PermissionStatus.NEVER_ASK_AGAIN:
+            case PermissionStatus.RESTRICTED:
             case PermissionStatus.DENIED:
-            case PermissionStatus.UNAVAILABLE:
                 return this.renderNavigateToSettingsIncentive()
             default:
                 return this.renderLoader()
@@ -170,7 +174,8 @@ const styles: Styles = {
     },
     loaderContainer: {
         flex: 1,
-        backgroundColor: iOSColors.black
+        backgroundColor: iOSColors.black,
+        justifyContent: 'center'
     },
     button: {
         padding: 10,
