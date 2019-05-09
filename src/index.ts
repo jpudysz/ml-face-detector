@@ -1,0 +1,1 @@
+export { MLFaceDetectorProvider } from './app'
