@@ -76,8 +76,8 @@ export class CameraScreen extends React.Component<CameraScreenProps, CameraScree
     render() {
         return (
             <RNCamera
-                style={styles.preview}
                 captureAudio={false}
+                style={styles.preview}
                 type={this.state.cameraType}
                 onFacesDetected={this.handleDetectedFaces}
                 faceDetectionMode={RNCamera.Constants.FaceDetection.Mode.accurate}
